@@ -1,0 +1,33 @@
+version: "2"
+services:
+  redis-master:
+    build:
+      context: ./redis-dockerfile/master-6382/
+      dockerfile: Dockerfile
+    container_name: redis_master_6382
+    volumes:
+    - E:\docker\:/home/redis/
+    ports:
+    - 6382:6382
+    - 16382:16382
+  redis-slave-6380:
+    build:
+      context: ./redis-dockerfile/slave-6380/
+      dockerfile: Dockerfile
+    container_name: redis_slave_6380
+    volumes:
+      - E:\docker\:/home/redis/
+    ports:
+      - 6380:6380
+      - 16380:16380
+  redis-slave-6381:
+    build:
+      context: ./redis-dockerfile/slave-6381/
+      dockerfile: Dockerfile
+    container_name: redis_slave_6381
+    volumes:
+      - E:\docker\:/home/redis/
+    ports:
+      - 6381:6381
+      - 16381:16381
+
