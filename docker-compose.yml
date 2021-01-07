@@ -6,7 +6,7 @@ services:
       dockerfile: Dockerfile
     container_name: redis_master_6382
     volumes:
-    - E:\docker\:/home/redis/
+    - E:\docker-redis-cluster\:/home/redis/
     ports:
     - 6382:6382
     - 16382:16382
@@ -16,7 +16,7 @@ services:
       dockerfile: Dockerfile
     container_name: redis_slave_6380
     volumes:
-      - E:\docker\:/home/redis/
+      - E:\docker-redis-cluster\:/home/redis/
     ports:
       - 6380:6380
       - 16380:16380
@@ -26,8 +26,37 @@ services:
       dockerfile: Dockerfile
     container_name: redis_slave_6381
     volumes:
-      - E:\docker\:/home/redis/
+      - E:\docker-redis-cluster\:/home/redis/
     ports:
       - 6381:6381
       - 16381:16381
-
+  redis-slave-6383:
+    build:
+      context: ./redis-dockerfile/slave-6383/
+      dockerfile: Dockerfile
+    container_name: redis_slave_6383
+    volumes:
+      - E:\docker-redis-cluster\:/home/redis/
+    ports:
+      - 6383:6383
+      - 16383:16383
+  redis-slave-6384:
+    build:
+      context: ./redis-dockerfile/slave-6384/
+      dockerfile: Dockerfile
+    container_name: redis_slave_6384
+    volumes:
+      - E:\docker-redis-cluster\:/home/redis/
+    ports:
+      - 6384:6384
+      - 16384:16384
+  redis-slave-6385:
+    build:
+      context: ./redis-dockerfile/slave-6385/
+      dockerfile: Dockerfile
+    container_name: redis_slave_6385
+    volumes:
+      - E:\docker-redis-cluster\:/home/redis/
+    ports:
+      - 6385:6385
+      - 16385:16385
